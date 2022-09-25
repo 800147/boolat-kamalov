@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--
+
+    Hello! Nice to see you interested in my resume so much :)
+    All the tricky stuff you see here is made for implementing two ideas:
+
+    1) What if font sizes and indents will visible and easy to understand?
+
+    When you set --size property to Text block it means that distance between baseline
+    and meanline (or capline for "caps" modifications) will equal to --size.
+    Same with --line-gap: it is distance from baseline of previous line and meanline (capline)
+    of next line.
+    Same with --margin-top and different paragraphs.
+
+    2) What if all sizes and indents in page will be part of Golden Ratio sequence?
+
+    You can remove or comment "display: none;" rule from ".Rulers" selector and see rulers
+    of different sizes. Then you can drag them to see what indents and sizes are match this rule.
+
+    Have fun! :)
+
+    PS: Some of these could be made easier with grid or flex, but I had to avoid them
+    to make my resume more printer-friendly
+
+  -->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Boolat Kamalov — Frontend Web Developer</title>
+    <style type="text/css">
+      @font-face {
+        font-family: 'PT Serif';
+        src: url('./fonts/pt-serif-v17-latin-regular.woff2') format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: 'PT Serif Caption';
+        src: url('./fonts/pt-serif-caption-v17-latin-regular.woff2') format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: 'PT Sans';
+        src: url('./fonts/pt-sans-v17-latin-regular.woff2') format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: 'PT Mono';
+        src: url('./fonts/pt-mono-v13-latin-regular.woff2') format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      :root {
+        font-size: 18px;
+
+        --multiplier-xs: 0.3819660113;
+        --multiplier-s: 0.6180339888;
+        --multiplier-m: 1;
+        --multiplier-l: 1.6180339888;
+        --multiplier-xl: 2.6180339888;
+        --multiplier-2xl: 4.2360679775;
+        --multiplier-3xl: 6.8541019663;
+        --multiplier-4xl: 11.0901699438;
+        --multiplier-5xl: 17.9442719100;
+        --multiplier-6xl: 29.0344418538;
+
+        --size-xs: 0.1909830056rem;
+        --size-s: 0.3090169944rem;
+        --size-m: 0.5rem;
+        --size-l: 0.8090169944rem;
+        --size-xl: 1.309016994rem;
+        --size-2xl: 2.118033989rem;
+        --size-3xl: 3.427050983rem;
+        --size-4xl: 5.545084972rem;
+        --size-5xl: 8.972135955rem;
+        --size-6xl: 14.51722093rem;
+
+        --color: #111111;
+        --weak-color: #707070;
+        --accent-color: teal;
+        --link-color: darkblue;
+        --bg-color: white;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --color: #e8e8e8;
+          --weak-color: #aaaaaa;
+          --accent-color: cadetblue;
+          --link-color: dodgerblue;
+          --bg-color: black;
+        }
+      }
+
+      body {
+        margin: 0 auto;
+        padding: var(--size-4xl) var(--size-l);
+        padding-top: calc(var(--size-4xl) + var(--size-xs));
+        --size: var(--size-m);
+        --line-gap: var(--multiplier-l);
+        color: var(--color);
+        background-color: var(--bg-color);
+        max-width: 40rem;
+        print-color-adjust: exact;
+      }
+      @media print {
+        body {
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+
+      /* Text */
+      .Text {
+        font-size: calc(var(--size) * var(--size-multiplier));
+        line-height: calc((var(--line-gap) + 1) / var(--size-multiplier));
+        --offset-bottom: calc((var(--line-gap) + 1) / var(--size-multiplier) * -1em + var(--size) - var(--offset-top));
+        margin-top: calc(var(--offset-top) + var(--margin-top, 0px) - var(--size-xs));
+        margin-bottom: calc(var(--offset-bottom) + var(--size-xs));
+        widows: 4;
+        orphans: 3;
+      }
+      .Text_font_serif {
+        font-family: 'PT Serif', serif;
+        font-weight: normal;
+        text-transform: none;
+        --size-multiplier: 2;
+        --offset-top: -0.532em;
+      }
+      .Text_font_serifCaps {
+        font-family: 'PT Serif', serif;
+        font-weight: normal;
+        text-transform: uppercase;
+        --size-multiplier: 1.427;
+        --offset-top: -0.58822em;
+      }
+      .Text_font_caption {
+        font-family: 'PT Serif Caption', serif;
+        font-weight: normal;
+        text-transform: none;
+        --size-multiplier: 1.904761905;
+        --offset-top: -0.538em;
+      }
+      .Text_font_captionBold {
+        font-family: 'PT Serif Caption', serif;
+        font-weight: bold;
+        text-transform: none;
+        --size-multiplier: 1.763979538;
+        --offset-top: -0.574em;
+      }
+      .Text_font_monospace {
+        font-family: 'PT Mono', monospace;
+        font-weight: normal;
+        text-transform: none;
+        --size-multiplier: 2;
+        --offset-top: -0.48em;
+      }
+      .Text_font_sans {
+        font-family: 'PT Sans', sans-serif;
+        font-weight: normal;
+        text-transform: none;
+        --size-multiplier: 2;
+        --offset-top: -0.526em;
+      }
+      .Text_font_sansCaps {
+        font-family: 'PT Sans', sans-serif;
+        font-weight: normal;
+        text-transform: uppercase;
+        --size-multiplier: 1.427;
+        --offset-top: -0.58822em;
+      }
+
+      /* Heading */
+      .Heading_1 {
+        --size: var(--size-2xl);
+        --line-gap: var(--multiplier-s);
+        --offset-top: -0.279em;
+      }
+      .Heading_2 {
+        --size: var(--size-xl);
+        --line-gap: var(--multiplier-m);
+        --offset-top: -0.375em;
+        color: var(--accent-color);
+      }
+      .Heading_3 {
+        --size: var(--size-l);
+      }
+
+      /* Subheading */
+      .Subheading {
+        color: var(--weak-color);
+        --margin-top: var(--size-xl);
+      }
+      .Subheading_1 {
+        color: var(--accent-color);
+        --size: var(--size-xl);
+        --line-gap: var(--multiplier-m);
+        --offset-top: -0.265em;
+      }
+      .Subheading_2,
+      .Subheading_3 {
+        --size: var(--size-l);
+      }
+
+      /* Section */
+      .Section_short {
+        page-break-inside: avoid !important;
+      }
+      .Section + .Section {
+        --margin-top: var(--size-4xl);
+      }
+      .Section > .Section + .Section {
+        --margin-top: var(--size-3xl);
+      }
+      .Heading + .Section {
+        --margin-top: var(--size-3xl);
+      }
+
+      /* Paragraph */
+      .Paragraph:not(:first-child) {
+        --margin-top: var(--size-xl);
+      }
+      .Heading + .Paragraph,
+      .Subheading + .Paragraph {
+        --margin-top: var(--size-2xl);
+      }
+
+      /* List */
+      .List {
+        padding: 0;
+        padding-left: calc(var(--multiplier-l) * 1em);
+        margin: 0;
+        list-style: none;
+      }
+      .List > li {
+        position: relative;
+        page-break-inside: avoid;
+      }
+      .List > li + li {
+        --margin-top: var(--size-xl);
+      }
+      .List > li::before {
+        content: '•';
+        position: absolute;
+        left: -1em;
+        top: 0;
+      }
+
+      /* Link */
+      .Link {
+        color: var(--link-color);
+      }
+      .Link:visited {
+        color: var(--link-color);
+      }
+      @media print {
+        .Link {
+          --link-color: var(--color);
+          text-decoration: none;
+        }
+      }
+
+      /* Dates */
+      .Dates {
+        --size: var(--size-m);
+        color: var(--color);
+      }
+
+      /* For indents testing (remove "display: none;") */
+      .Rulers {
+        display: none;
+      }
+      .Rulers-Ruler {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: var(--size);
+        background-color: rgba(255, 0, 255, 0.15);
+        pointer-events: all;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="Section Section_short">
+      <h1 class="Text Text_font_caption Heading Heading_1">Boolat Kamalov</h1>
+      <p class="Text Text_font_sansCaps Subheading Subheading_1">Frontend Web Developer</p>
+      <p class="Text Text_font_serif Paragraph">Innopolis, Russia</p>
+      <p class="Text Text_font_serif Paragraph"><a class="Link" href="tel:+79047630772">+7 (904) 763-07-72</a></p>
+      <p class="Text Text_font_serif Paragraph"><a class="Link" href="mailto:BoolatKamalov@gmail.com">BoolatKamalov@gmail.com</a></p>
+    </section>
+    <section class="Section Section_short">
+      <h2 class="Text Text_font_caption Heading Heading_2">Summary</h2>
+      <p class="Text Text_font_serif Paragraph">I have worked in various fields, from game development to web development for 10 years. Now I am a frontend developer. I love to use React.js but I am ready to try other frameworks and libraries as well.</p>
+    </section>
+    <section class="Section">
+      <h2 class="Text Text_font_caption Heading Heading_2">Experience</h2>
+      <section class="Section">
+        <h3 class="Text Text_font_caption Heading Heading_3">Diginavis</h3>
+        <p class="Text Text_font_sansCaps Subheading Subheading_3">Frontend Web Developer</p>
+        <p class="Text Text_font_monospace Dates Subheading">July 2020 – present</p>
+        <ul class="List Paragraph">
+          <li class="Text Text_font_serif">Developing web applications using React, Redux, Typescript, Next.js, VuePress.</li>
+          <li class="Text Text_font_serif">Our main project (<a class="Link" href="https://map.avtm.center" target="_blank" rel="noopener noreferrer nofollow">https://map.avtm.center</a>) is related to maps. We use MapboxGLJS to render map and react to make interfaces.</li>
+          <li class="Text Text_font_serif">We have a small team of two frontend developers for our projects so my work covers all aspects of frontend application development from interface development to infrastructure improvement, architecture and performance improvement.</li>
+          <li class="Text Text_font_serif">I have implemented components library to use same components between different projects that we support ourselves.</li>
+          <li class="Text Text_font_serif">I have made template system that help us to make emails. It uses Vue and converts it to plain HTML.</li>
+          <li class="Text Text_font_serif">Participate in hiring new employees — conduct technical interviews.</li>
+        </ul>
+      </section>
+      <section class="Section">
+        <h3 class="Text Text_font_caption Heading Heading_3">Yandex Technologies</h3>
+        <p class="Text Text_font_sansCaps Subheading Subheading_3">Frontend Web Developer</p>
+        <p class="Text Text_font_monospace Dates Subheading">June 2018 – July 2020</p>
+        <ul class="List Paragraph">
+          <li class="Text Text_font_serif">Passed bootcamp — worked in different teams using different technologies.</li>
+          <li class="Text Text_font_serif">Develop internal services using react, redux, i-bem, jest, hermione.js.</li>
+          <li class="Text Text_font_serif">Participate in hiring new employees — conduct technical interviews.</li>
+          <li class="Text Text_font_serif">Mentor my intern to success: my intern was first intern hired in Yandex Technologies in Innopolis.</li>
+          <li class="Text Text_font_serif">I was a Front-End Lead for development of hardware requests managing system. Now the system allows to refuse the use of Excel sheets. This optimized the process of working with hardware purchasing.</li>
+          <li class="Text Text_font_serif">Also I was a Front-End Lead for development of the service violations detection system. It cleans up services tree from unused services to optimize processes.</li>
+          <li class="Text Text_font_serif">Introduced the practice of using CSS Grid and CSS custom properties into the project.</li>
+        </ul>
+      </section>
+      <section class="Section Section_short">
+        <h3 class="Text Text_font_caption Heading Heading_3">Sberbank-Technology</h3>
+        <p class="Text Text_font_sansCaps Subheading Subheading_3">Java Software Developer</p>
+        <p class="Text Text_font_monospace Dates Subheading">December 2016 – June 2018</p>
+        <ul class="List Paragraph">
+          <li class="Text Text_font_serif">Was part of the team developing a new business project — online registration of a legal entity. Development was conducted in Java, typescript, react, redux.</li>
+          <li class="Text Text_font_serif">Developed a method of writing Selenium-tests, which allowed to reduce the time of writing a test from 1–2 days to several minutes.</li>
+        </ul>
+      </section>
+      <section class="Section Section_short">
+        <h3 class="Text Text_font_caption Heading Heading_3">Bigzur Games</h3>
+        <p class="Text Text_font_sansCaps Subheading Subheading_3">Game Developer</p>
+        <p class="Text Text_font_monospace Dates Subheading">July 2012 – December 2016</p>
+        <ul class="List Paragraph">
+          <li class="Text Text_font_serif">Made from scratch three Flash-games (including PHP backend), which were played by millions of users.</li>
+          <li class="Text Text_font_serif">Proposed and developed a library that converts requests in its own API to requests to the API of the Internet platforms Facebook, Vkontakte and Odnoklassniki. This allowed us to write one code that works on all three platforms at once.</li>
+          <li class="Text Text_font_serif">Developed a system of statistics with the admin panel, which showed all the necessary metrics. This allowed us to better understand our users and change the game settings to increase profits.</li>
+        </ul>
+      </section>
+    </section>
+    <section class="Section Section_short">
+      <h2 class="Text Text_font_caption Heading Heading_2">Education</h2>
+      <section class="Section Paragraph">
+        <h3 class="Text Text_font_caption Heading Heading_3">Kazan National Research Technical University – KAI</h3>
+        <p class="Text Text_font_sansCaps Subheading Subheading_3">Specialist's diploma, Information Technology</p>
+        <p class="Text Text_font_monospace Dates Subheading">2007 – 2012</p>
+      </section>
+    </section>
+    <section class="Section Section_short">
+      <h2 class="Text Text_font_caption Heading Heading_2">Skills</h2>
+      <p class="Text Text_font_serif Paragraph">HTML, CSS, JavaScript, React, TypeScript, BEM, Git</p>
+    </section>
+    <div class="Rulers" aria-hidden="true">
+      <div class="Rulers-Ruler" style="--size: var(--size-4xl);" draggable="true"></div>
+      <div class="Rulers-Ruler" style="--size: var(--size-3xl);" draggable="true"></div>
+      <div class="Rulers-Ruler" style="--size: var(--size-2xl);" draggable="true"></div>
+      <div class="Rulers-Ruler" style="--size: var(--size-xl);" draggable="true"></div>
+      <div class="Rulers-Ruler" style="--size: var(--size-l);" draggable="true"></div>
+      <div class="Rulers-Ruler" style="--size: var(--size-m);" draggable="true"></div>
+    </div>
+  </body>
+</html>
