@@ -98,7 +98,7 @@
       body {
         margin: 0 auto;
         padding: var(--size-4xl) var(--size-l);
-        padding-top: calc(var(--size-4xl) + var(--size-xs));
+        padding-top: calc(var(--size-4xl));
         --size: var(--size-m);
         --line-gap: var(--multiplier-l);
         color: var(--color);
@@ -110,6 +110,7 @@
         body {
           padding-left: 0;
           padding-right: 0;
+          padding-bottom: 0;
         }
       }
 
@@ -118,8 +119,8 @@
         font-size: calc(var(--size) * var(--size-multiplier));
         line-height: calc((var(--line-gap) + 1) / var(--size-multiplier));
         --offset-bottom: calc((var(--line-gap) + 1) / var(--size-multiplier) * -1em + var(--size) - var(--offset-top));
-        margin-top: calc(var(--offset-top) + var(--margin-top, 0px) - var(--size-xs));
-        margin-bottom: calc(var(--offset-bottom) + var(--size-xs));
+        margin-top: calc(var(--offset-top) + var(--margin-top, 0px));
+        margin-bottom: calc(var(--offset-bottom));
         widows: 4;
         orphans: 3;
       }
@@ -198,7 +199,7 @@
         color: var(--accent-color);
         --size: var(--size-xl);
         --line-gap: var(--multiplier-m);
-        --offset-top: -0.265em;
+        --offset-top: -0.375em;
       }
       .Subheading_2,
       .Subheading_3 {
@@ -269,6 +270,29 @@
         color: var(--color);
       }
 
+      /* QR Code */
+      .QrCode-Section {
+        text-align: right;
+        padding-right: calc(var(--size-4xl) + var(--size-xl));
+        position: relative;
+        display: none;
+      }
+      @media print {
+        .QrCode-Section {
+          display: block;
+        }
+      }
+      .QrCode-ImageParagraph {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+      .QrCode-Image {
+        display: block;
+        width: var(--size-4xl);
+        image-rendering: pixelated;
+      }
+
       /* For indents testing (remove "display: none;") */
       .Rulers {
         display: none;
@@ -278,9 +302,12 @@
         top: 0;
         left: 0;
         right: 0;
+        margin: 0 auto;
+        max-width: calc(40rem + var(--size-l) * 2);
         height: var(--size);
         background-color: rgba(255, 0, 255, 0.15);
         pointer-events: all;
+        cursor: grab;
       }
     </style>
   </head>
@@ -356,6 +383,12 @@
     <section class="Section Section_short">
       <h2 class="Text Text_font_caption Heading Heading_2">Skills</h2>
       <p class="Text Text_font_serif Paragraph">HTML, CSS, JavaScript, React, TypeScript, BEM, Git</p>
+    </section>
+    <section class="Section Section_short QrCode-Section">
+      <h2 class="Text Text_font_caption Heading Heading_3 QrCode-Heading">Online</h2>
+      <p class="Text Text_font_sansCaps Subheading Subheading_3 QrCode-Description">To see this resume online follow the link</p>
+      <p class="Text Text_font_serif Paragraph QrCode-Link">https://800147.github.io/boolat-kamalov/web-developer</p>
+      <p class="Text Text_font_serif Paragraph QrCode-ImageParagraph"><img class="QrCode-Image" src="./img/qr-code.png" /></p>
     </section>
     <div class="Rulers" aria-hidden="true">
       <div class="Rulers-Ruler" style="--size: var(--size-4xl);" draggable="true"></div>
