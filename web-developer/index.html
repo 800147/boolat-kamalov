@@ -30,13 +30,13 @@
     <title>Boolat Kamalov — Frontend Web Developer</title>
     <meta name="description" content="Resume" />
 
-    <meta property="og:title" content="Kamalov Boolat — Frontend Web Developer" />
+    <meta property="og:title" content="Boolat Kamalov — Frontend Web Developer" />
     <meta property="og:description" content="Resume" />
     <meta property="og:url" content="https://800147.github.io/boolat-kamalov/web-developer" />
-    <meta property="og:image" content="./img/photo.jpg" />
+    <meta property="og:image" content="./img/my-photo.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
-    <meta property="og:image:width" content="640" />
-    <meta property="og:image:height" content="640" />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="400" />
 
     <style type="text/css">
       @font-face {
@@ -107,7 +107,7 @@
 
       body {
         margin: 0 auto;
-        padding: var(--size-4xl) var(--size-l);
+        padding: var(--size-4xl) var(--size-xl);
         padding-top: calc(var(--size-4xl));
         --size: var(--size-m);
         --line-gap: var(--multiplier-l);
@@ -121,6 +121,11 @@
           padding-left: 0;
           padding-right: 0;
           padding-bottom: 0;
+        }
+      }
+      @media (max-width: 32rem) {
+        body {
+          padding: var(--size-4xl) var(--size-l);
         }
       }
 
@@ -280,6 +285,57 @@
         color: var(--color);
       }
 
+      /* Photo */
+      .Photo {
+        height: 0;
+        position: relative;
+      }
+      .Photo-Img {
+        display: block;
+        bottom: 0;
+        left: calc(0px - var(--size-4xl) - var(--size-xl));
+        margin-top: var(--size-xl);
+        width: var(--size-4xl);
+        height: var(--size-4xl);
+        border-radius: var(--size-m);
+        position: absolute;
+      }
+      .Photo_mobile {
+        height: max-content;
+        display: none;
+      }
+      .Photo_mobile .Photo-Img {
+        position: static;
+      }
+      .Section_withPhoto {
+        position: relative;
+        padding-left: 0;
+        transition: padding-left 0.3s ease-out;
+      }
+      @media (max-width: 64rem) {
+        .Section_withPhoto {
+          padding-left: calc(var(--size-4xl) + var(--size-xl));
+        }
+      }
+      @media (max-width: 32rem) {
+        .Photo:not(.Photo_mobile) {
+          display: none;
+        }
+        .Photo_mobile {
+          display: block;
+        }
+        .Section_withPhoto {
+          transition: none;
+          padding-left: 0;
+        }
+        .Photo {
+          height: max-content;
+        }
+        .Photo-Img {
+          position: static;
+        }
+      }
+
       /* QR Code */
       .QrCode-Section {
         text-align: right;
@@ -322,9 +378,15 @@
     </style>
   </head>
   <body>
-    <section class="Section Section_short">
-      <h1 class="Text Text_font_caption Heading Heading_1">Boolat Kamalov</h1>
+    <section class="Section Section_short Section_withPhoto">
+      <h1 class="Text Text_font_caption Heading Heading_1">Boolat<br />Kamalov</h1>
+      <div class="Photo" aria-hidden="true">
+        <img class="Photo-Img" src="./img/my-photo.jpg" alt="my photo" />
+      </div>
       <p class="Text Text_font_sansCaps Subheading Subheading_1">Frontend Web Developer</p>
+      <div class="Photo Photo_mobile">
+        <img class="Photo-Img" src="./img/my-photo.jpg" alt="my photo" />
+      </div>
       <p class="Text Text_font_serif Paragraph">Innopolis, Russia</p>
       <p class="Text Text_font_serif Paragraph"><a class="Link" href="tel:+79047630772">+7 (904) 763-07-72</a></p>
       <p class="Text Text_font_serif Paragraph"><a class="Link" href="mailto:BoolatKamalov@gmail.com">BoolatKamalov@gmail.com</a></p>
@@ -397,8 +459,8 @@
     <section class="Section Section_short QrCode-Section">
       <h2 class="Text Text_font_caption Heading Heading_3 QrCode-Heading">Online</h2>
       <p class="Text Text_font_sansCaps Subheading Subheading_3 QrCode-Description">To see this resume online follow the link</p>
-      <p class="Text Text_font_serif Paragraph QrCode-Link">https://800147.github.io/boolat-kamalov/web-developer</p>
-      <p class="Text Text_font_serif Paragraph QrCode-ImageParagraph"><img class="QrCode-Image" src="./img/qr-code.png" /></p>
+      <p class="Text Text_font_serif Paragraph QrCode-Link"><a class="Link" href="https://800147.github.io/boolat-kamalov/web-developer">https://800147.github.io/boolat-kamalov/web-developer</a></p>
+      <p class="Text Text_font_serif Paragraph QrCode-ImageParagraph"><a class="Link" href="https://800147.github.io/boolat-kamalov/web-developer"><img class="QrCode-Image" src="./img/qr-code.png" /></a></p>
     </section>
     <div class="Rulers" aria-hidden="true">
       <div class="Rulers-Ruler" style="--size: var(--size-4xl);" draggable="true"></div>
