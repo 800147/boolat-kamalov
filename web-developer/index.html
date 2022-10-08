@@ -122,10 +122,11 @@
         print-color-adjust: exact;
       }
       @media print {
+        :root {
+          font-size: 16px;
+        }
         body {
-          padding-left: 0;
-          padding-right: 0;
-          padding-bottom: 0;
+          padding: 1rem 0 0 0;
         }
         * {
           /* Fix for Firefox */
@@ -450,6 +451,19 @@
           <li class="Text Text_font_serif">Made from scratch three Flash-games (including PHP backend), which were played by millions of users.</li>
           <li class="Text Text_font_serif">Proposed and developed a library that converts requests in its own API to requests to the API of the Internet platforms Facebook, Vkontakte and Odnoklassniki. This allowed us to write one code that works on all three platforms at once.</li>
           <li class="Text Text_font_serif">Developed a system of statistics with the admin panel, which showed all the necessary metrics. This allowed us to better understand our users and change the game settings to increase profits.</li>
+        </ul>
+      </section>
+    </section>
+    <section class="Section">
+      <h2 class="Text Text_font_caption Heading Heading_2">Personal projects</h2>
+      <section class="Section">
+        <h3 class="Text Text_font_caption Heading Heading_3">Chitaem.Online</h3>
+        <p class="Text Text_font_sansCaps Subheading Subheading_3">Web Developer</p>
+        <ul class="List Paragraph">
+          <li class="Text Text_font_serif">Online interactive book for children — the project invented by my wife. All the tecnical work was on my side (<a class="Link" href="https://chitaem.online" target="_blank" rel="noopener noreferrer nofollow">https://chitaem.online</a>).</li>
+          <li class="Text Text_font_serif">The site is made with next.js</li>
+          <li class="Text Text_font_serif">The interactive book (<a class="Link" href="https://chitaem.online/books/kostyas-adventures" target="_blank" rel="noopener noreferrer nofollow">https://chitaem.online/books/kostyas-adventures</a>) written in vanilla html, javascript and css. Webpack was used to make trial and full versions of the book from one source.</li>
+          <li class="Text Text_font_serif">Project is multilanguage — Russian and Tatar languages are supported.</li>
         </ul>
       </section>
     </section>
