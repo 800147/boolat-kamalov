@@ -126,7 +126,7 @@
           font-size: 16px;
         }
         body {
-          padding: 1rem 0 0 0;
+          padding: 2rem 0 0 0;
         }
         * {
           /* Fix for Firefox */
@@ -327,6 +327,12 @@
           padding-left: calc(var(--size-4xl) + var(--size-xl));
         }
       }
+      /* Fix for Webkit */
+      @media print {
+        .Section_withPhoto {
+          padding-left: calc(var(--size-4xl) + var(--size-xl));
+        }
+      }
       @media (max-width: 32rem) {
         .Photo:not(.Photo_mobile) {
           display: none;
@@ -454,7 +460,7 @@
         </ul>
       </section>
     </section>
-    <section class="Section">
+    <section class="Section Section_short">
       <h2 class="Text Text_font_caption Heading Heading_2">Personal projects</h2>
       <section class="Section">
         <h3 class="Text Text_font_caption Heading Heading_3">Chitaem.Online</h3>
@@ -469,7 +475,7 @@
     </section>
     <section class="Section Section_short">
       <h2 class="Text Text_font_caption Heading Heading_2">Education</h2>
-      <section class="Section Paragraph">
+      <section class="Section">
         <h3 class="Text Text_font_caption Heading Heading_3">Kazan National Research Technical University – KAI</h3>
         <p class="Text Text_font_sansCaps Subheading Subheading_3">Specialist's diploma, Information Technology</p>
         <p class="Text Text_font_monospace Dates Subheading">2007 – 2012</p>
