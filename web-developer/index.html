@@ -25,11 +25,13 @@
 
   -->
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Boolat Kamalov — Frontend Web Developer</title>
+    <link type="image/svg+xml" rel="icon" href="./img/favicon.svg" />
     <link type="image/png" rel="icon" href="./img/favicon.png" />
-    <meta name="description" content="Resume" />
+    <meta name="description" content="Resume of Boolat Kamalov — frontend web developer" />
 
     <meta property="og:title" content="Boolat Kamalov — Frontend Web Developer" />
     <meta property="og:description" content="Resume" />
@@ -355,7 +357,7 @@
       /* QR Code */
       .QrCode-Section {
         text-align: right;
-        padding-right: calc(var(--size-4xl) + var(--size-xl));
+        padding-right: calc(var(--size-3xl) + var(--size-l));
         position: relative;
         display: none;
       }
@@ -364,14 +366,26 @@
           display: block;
         }
       }
-      .QrCode-ImageParagraph {
+      .QrCode-Heading {
+        --size: var(--size-m);
+      }
+      .QrCode-Description {
+        --size: var(--size-m);
+        --margin-top: var(--size-l);
+      }
+      .QrCode-Section .QrCode-Link {
+        --size: var(--size-s);
+        --margin-top: var(--size-xl);
+      }
+      .QrCode-Section .QrCode-ImageParagraph {
         position: absolute;
         top: 0;
         right: 0;
+        margin-top: var(--size-m);
       }
       .QrCode-Image {
         display: block;
-        width: var(--size-4xl);
+        width: var(--size-3xl);
         image-rendering: pixelated;
       }
 
@@ -467,23 +481,23 @@
         <p class="Text Text_font_sansCaps Subheading Subheading_3">Web Developer</p>
         <ul class="List Paragraph">
           <li class="Text Text_font_serif">Online interactive book for children — the project invented by my wife. All the tecnical work was on my side (<a class="Link" href="https://chitaem.online" target="_blank" rel="noopener noreferrer nofollow">https://chitaem.online</a>).</li>
-          <li class="Text Text_font_serif">The site is made with next.js</li>
-          <li class="Text Text_font_serif">The interactive book (<a class="Link" href="https://chitaem.online/books/kostyas-adventures" target="_blank" rel="noopener noreferrer nofollow">https://chitaem.online/books/kostyas-adventures</a>) written in vanilla html, javascript and css. Webpack was used to make trial and full versions of the book from one source.</li>
+          <li class="Text Text_font_serif">The site is made with Next.js</li>
+          <li class="Text Text_font_serif">The interactive books (<a class="Link" href="https://chitaem.online/books/kostyas-adventures" target="_blank" rel="noopener noreferrer nofollow">https://chitaem.online/books/kostyas-adventures</a>, <a class="Link" href="https://chitaem.online/books/first-fox-on-the-moon" target="_blank" rel="noopener noreferrer nofollow">https://chitaem.online/books/first-fox-on-the-moon</a>) are written in vanilla HTML, JavaScript and CSS. Webpack was used to make trial and full versions of the book from one source.</li>
           <li class="Text Text_font_serif">Project is multilanguage — Russian and Tatar languages are supported.</li>
         </ul>
       </section>
     </section>
     <section class="Section Section_short">
       <h2 class="Text Text_font_caption Heading Heading_2">Education</h2>
-      <section class="Section">
-        <h3 class="Text Text_font_caption Heading Heading_3">Kazan National Research Technical University – KAI</h3>
-        <p class="Text Text_font_sansCaps Subheading Subheading_3">Specialist's diploma, Information Technology</p>
-        <p class="Text Text_font_monospace Dates Subheading">2007 – 2012</p>
-      </section>
+      <p class="Text Text_font_serif Paragraph">Kazan National Research Technical University named after A.N.Tupolev (2007 – 2012) — Specialist's diploma, Information Technology</p>
     </section>
     <section class="Section Section_short">
       <h2 class="Text Text_font_caption Heading Heading_2">Skills</h2>
       <p class="Text Text_font_serif Paragraph">HTML, CSS, JavaScript, React, TypeScript, BEM, Git</p>
+    </section>
+    <section class="Section Section_short">
+      <h2 class="Text Text_font_caption Heading Heading_2">Links</h2>
+      <p class="Text Text_font_serif Paragraph">Github: <a class="Link" href="https://800147.github.io" target="_blank" rel="noopener noreferrer nofollow">https://800147.github.io</a></p>
     </section>
     <section class="Section Section_short QrCode-Section">
       <h2 class="Text Text_font_caption Heading Heading_3 QrCode-Heading">Online</h2>
