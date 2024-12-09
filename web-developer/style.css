@@ -137,6 +137,11 @@ body {
   --line-gap: var(--multiplier-s);
   --offset-top: -0.279em;
 }
+@media print {
+  .Heading_1 br {
+    display: none;
+  }
+}
 .Heading_2 {
   --size: var(--size-xl);
   --line-gap: var(--multiplier-m);
@@ -151,6 +156,11 @@ body {
 .Subheading {
   color: var(--weak-color);
   --margin-top: var(--size-xl);
+}
+@media print {
+  .Subheading_1 {
+    --margin-top: var(--size-2xl);
+  }
 }
 .Subheading_1 {
   color: var(--accent-color);
@@ -170,20 +180,44 @@ body {
 .Section + .Section {
   --margin-top: var(--size-4xl);
 }
+@media print {
+  .Section + .Section {
+    --margin-top: var(--size-2xl);
+  }
+}
 .Section > .Section + .Section {
   --margin-top: var(--size-3xl);
 }
 .Heading + .Section {
   --margin-top: var(--size-3xl);
 }
+@media print {
+  .Section > .Section + .Section {
+    --margin-top: var(--size-xl);
+  }
+  .Heading + .Section {
+    --margin-top: var(--size-xl);
+  }
+}
 
 /* Paragraph */
 .Paragraph:not(:first-child) {
   --margin-top: var(--size-xl);
 }
+@media print {
+  .Paragraph:not(:first-child) {
+    --margin-top: var(--size-l);
+  }
+}
 .Heading + .Paragraph,
 .Subheading + .Paragraph {
   --margin-top: var(--size-2xl);
+}
+@media print {
+  .Heading + .Paragraph,
+  .Subheading + .Paragraph {
+    --margin-top: var(--size-xl);
+  }
 }
 
 /* List */
@@ -199,6 +233,11 @@ body {
 }
 .List > li + li {
   --margin-top: var(--size-xl);
+}
+@media print {
+  .List > li + li {
+    --margin-top: var(--size-l);
+  }
 }
 .List > li::before {
   content: "•";
@@ -226,6 +265,14 @@ body {
   --size: var(--size-m);
   color: var(--color);
 }
+@media print {
+  .Dates {
+    position: relative;
+    text-align: right;
+    bottom: calc(var(--size-xl) + var(--size-m));
+    margin-bottom: calc((var(--size-xl) + var(--size-l)) * -1);
+  }
+}
 
 /* Photo */
 .Photo {
@@ -241,6 +288,12 @@ body {
   height: var(--size-4xl);
   border-radius: var(--size-m);
   position: absolute;
+}
+@media print {
+  .Photo-Img {
+    bottom: calc(var(--size-3xl) * -1);
+    height: var(--size-4xl);
+  }
 }
 .Photo_mobile {
   height: max-content;
