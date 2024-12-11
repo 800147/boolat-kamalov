@@ -25,14 +25,16 @@
 
   --color: #111111;
   --weak-color: #707070;
+  --weaker-color: #888888;
   --accent-color: teal;
   --link-color: darkblue;
   --bg-color: white;
 }
-@media (prefers-color-scheme: dark) {
+@media screen and (prefers-color-scheme: dark) {
   :root {
     --color: #e8e8e8;
     --weak-color: #aaaaaa;
+    --weaker-color: #888888;
     --accent-color: cadetblue;
     --link-color: dodgerblue;
     --bg-color: black;
@@ -129,6 +131,38 @@ body {
   text-transform: uppercase;
   --size-multiplier: 1.427;
   --offset-top: -0.58822em;
+}
+
+/* LangSwitch */
+.LangSwitch {
+  list-style-type: none;
+  display: flex;
+  position: absolute;
+  margin: 0 calc(var(--size-xl) * -1);
+  padding: 0 var(--size-xl);
+  top: var(--size-xl);
+  justify-items: end;
+  justify-content: end;
+  width: 100%;
+  max-width: calc(40rem + var(--size-xl) * 2);
+  box-sizing: border-box;
+}
+@media print {
+  .LangSwitch {
+    display: none;
+  }
+}
+.LangSwitch > li {
+  --size: var(--size-l);
+}
+.LangSwitch li:first-child::after {
+  content: " | ";
+}
+.LangSwitch a {
+  color: var(--weaker-color);
+}
+.LangSwitch a:not(:hover):not(:focus-visible) {
+  text-decoration: none;
 }
 
 /* Heading */
@@ -383,7 +417,7 @@ body {
   left: 0;
   right: 0;
   margin: 0 auto;
-  max-width: calc(40rem + var(--size-l) * 2);
+  max-width: calc(40rem + var(--size-xl) * 2);
   height: var(--size);
   background-color: rgba(255, 0, 255, 0.15);
   pointer-events: all;
