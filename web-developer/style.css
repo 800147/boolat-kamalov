@@ -77,7 +77,7 @@ body {
       var(--offset-top)
   );
   margin-top: calc(var(--offset-top) + var(--margin-top, 0px));
-  margin-bottom: calc(var(--offset-bottom));
+  margin-bottom: calc(var(--offset-bottom) + var(--margin-bottom, 0px));
   widows: 4;
   orphans: 3;
 }
@@ -260,18 +260,19 @@ body {
   }
 }
 
+@media print {
+  .Position {
+    position: relative;
+    text-align: right;
+    bottom: var(--size-2xl);
+    --margin-bottom: calc(var(--size-2xl) * -1);
+  }
+}
+
 /* Dates */
 .Dates {
   --size: var(--size-m);
   color: var(--color);
-}
-@media print {
-  .Dates {
-    position: relative;
-    text-align: right;
-    bottom: calc(var(--size-xl) + var(--size-m));
-    margin-bottom: calc((var(--size-xl) + var(--size-l)) * -1);
-  }
 }
 
 /* Photo */
