@@ -58,6 +58,7 @@ body {
   }
   body {
     padding: 2rem 0 0 0;
+    max-width: unset;
   }
   * {
     /* Fix for Firefox */

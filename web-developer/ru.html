@@ -41,6 +41,14 @@
         font-display: swap;
       }
       @font-face {
+        font-family: "PT Serif";
+        src: url("./fonts/pt-serif-v18-cyrillic_latin-700.woff2")
+          format("woff2");
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
         font-family: "PT Serif Caption";
         src: url("./fonts/pt-serif-caption-v17-cyrillic_latin-regular.woff2")
           format("woff2");
@@ -74,7 +82,7 @@
     </ul>
     <section class="Section Section_short Section_withPhoto">
       <h1 class="Text Text_font_caption Heading Heading_1">
-        Булат <br />Камалов
+        Камалов <br />Булат
       </h1>
       <div class="Photo" aria-hidden="true">
         <img class="Photo-Img" src="./img/my-photo.jpg" alt="my photo" />
@@ -87,20 +95,19 @@
       </div>
       <p class="Text Text_font_serif Paragraph">г. Иннополис, Россия</p>
       <p class="Text Text_font_serif Paragraph">
-        <a class="Link" href="tel:+79047630772">+7 (904) 763-07-72</a>
+        Telegram:
+        <a class="Link" href="https://t.me/the800147" target="_blank"
+          >@the800147</a
+        >
       </p>
       <p class="Text Text_font_serif Paragraph">
+        Телефон: <a class="Link" href="tel:+79047630772">+7 (904) 763-07-72</a>
+      </p>
+      <p class="Text Text_font_serif Paragraph">
+        Email:
         <a class="Link" href="mailto:BoolatKamalov@gmail.com"
           >BoolatKamalov@gmail.com</a
         >
-      </p>
-    </section>
-    <section class="Section Section_short">
-      <h2 class="Text Text_font_caption Heading Heading_2">Резюме</h2>
-      <p class="Text Text_font_serif Paragraph">
-        За свои 12 лет опыта я был и разработчиком игр, и бэкенд разработчиком,
-        а сейчас я — фронтенд-разработчик и мне это очень нравится. Я люблю
-        React.js, но готов обучиться и чему-то новому.
       </p>
     </section>
     <section class="Section">
@@ -113,40 +120,32 @@
         <p class="Text Text_font_monospace Dates Subheading">
           июль 2020 – декабрь 2024 (4 года 6 месяцев)
         </p>
+        <p class="Paragraph Text Text_font_serif">
+          Проект помогал организовывать полёты гражданских дронов. Пользователь
+          выбирал зону на карте и ответив на вопросы получал PDF для подачи
+          заявки на полёт. Мы использовали
+          <b>Mapbox GL JS</b>, <b>React</b>, <b>Redux</b>, <b>TypeScript</b>,
+          <b>Next.js</b>, <b>VuePress</b>.
+        </p>
         <ul class="List Paragraph">
           <li class="Text Text_font_serif">
-            Веб-разработка с использованием React, Redux, TypeScript, Next.js,
-            VuePress.
+            Я внедрил библиотеку компонентов (наши стили поверх
+            <b>Material UI</b>), которая позволила нам использовать единый стиль
+            в разных наших проектах, не копируя код.
           </li>
           <li class="Text Text_font_serif">
-            Наш осн овной проект —
-            <a
-              class="Link"
-              href="https://map.avtm.center"
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-              >https://map.avtm.center</a
-            > — связан с картами (регулирование полётов гражданских дронов). Мы
-            использовали Mapbox GL JS для отрисовки карты и React.js
-            для интерфейсов.
+            Создал проект, создающий шаблоны для писем, который из
+            <b>Vue</b>
+            генерирует HTML.
+          </li>
+          <li class="Text Text_font_serif">
+            Участвовал в найме новых сотрудников — проводил технические
+            собеседования.
           </li>
           <li class="Text Text_font_serif">
             Команда небольшая — два фронтенд-разбаботчика на несколько проектов,
             так что работа покрывала широкий спектр задач от разработки
             интерфейсов до обновления стека и улучшения производительности.
-          </li>
-          <li class="Text Text_font_serif">
-            Я внедрил библиотеку компонентов (наши стили поверх Material UI),
-            которая позволила нам использовать единый стиль в разных наших
-            проектах, не копируя код.
-          </li>
-          <li class="Text Text_font_serif">
-            Создал проект, создающий шаблоны для писем, который использует Vue
-            для генерации HTML.
-          </li>
-          <li class="Text Text_font_serif">
-            Участвовал в процессе найма новых сотрудников — проводил технические
-            собеседования.
           </li>
         </ul>
       </section>
@@ -160,36 +159,33 @@
         <p class="Text Text_font_monospace Dates Subheading">
           июнь 2018 – июль 2020 (2 года 2 месяцев)
         </p>
+        <p class="Paragraph Text Text_font_serif">
+          Разрабатывал внутренний сервис управления командами и ресурсами
+          используя <b>React</b>, <b>Redux</b>, <b>i-Bem</b>, <b>Jest</b>,
+          <b>Hermione.js</b>.
+        </p>
         <ul class="List Paragraph">
           <li class="Text Text_font_serif">
-            Прошёл Bootcamp — работал в разных командах, используя разные
-            технологии.
-          </li>
-          <li class="Text Text_font_serif">
-            Разрабатывал внутренний сервис используя React, Redux, i-Bem, Jest,
-            Hermione.js.
-          </li>
-          <li class="Text Text_font_serif">
-            Участвовал в процессе найма новых сотрудников — проводил технические
-            собеседования.
-          </li>
-          <li class="Text Text_font_serif">
-            Был ментором. Моя стажёр стала первым стажёром, нанятым в Яндекс
-            после стажировки в городе Иннополис.
-          </li>
-          <li class="Text Text_font_serif">
-            Был фронтенд-лидом в проекте разработки системы управления заявками
+            Был фронтенд-лидом в фиче разработки системы управления заявками
             на железо. Эта система позволила отказаться от Excel-таблиц
-            при заказе оборудования и оптимизировала закупки.
+            при заказе оборудования.
           </li>
           <li class="Text Text_font_serif">
-            Так же был фронтенд-лидом по разработке системы обнаружения
-            подозрительности сервисов. Она находит проблемы в описаниях
-            сервисов, помогает найти неиспользуемые сервисы и ресурсы.
+            Так же был фронтенд-лидом по фиче системы обнаружения
+            подозрительности сервисов. Она позволила высвободить неиспользуемое
+            железо.
           </li>
           <li class="Text Text_font_serif">
             Ввёл в проект практику использования CSS Grid и CSS custom
             properties.
+          </li>
+          <li class="Text Text_font_serif">
+            Был <b>ментором</b>. Моя стажёр стала первым стажёром, нанятым
+            в Яндекс после стажировки в городе Иннополис.
+          </li>
+          <li class="Text Text_font_serif">
+            Участвовал в найме новых сотрудников — проводил технические
+            собеседования.
           </li>
         </ul>
       </section>
@@ -206,11 +202,11 @@
         <ul class="List Paragraph">
           <li class="Text Text_font_serif">
             Участвовал в разработке нового бизнес-проекта — онлайн-регистрации
-            юридического лица. Разработка велась на Java, TypeScript, React,
-            Redux.
+            юридического лица. Разработка велась на Java, <b>TypeScript</b>,
+            <b>React</b>, <b>Redux</b>.
           </li>
           <li class="Text Text_font_serif">
-            Разработал инструменты для написания Selenium-тестов, которые
+            Разработал инструменты для написания <b>Selenium-тестов</b>, которые
             позволили сократить время написания теста с 1–2 дней до нескольких
             минут.
           </li>
@@ -238,7 +234,7 @@
           <li class="Text Text_font_serif">
             Разработал систему статистики с админкой, которая показывала все
             необходимые метрики. Это позволило нам лучше понять наших
-            пользователей и изменить настройки игры, чтобы увеличить прибыль.
+            пользователей и изменять настройки игры, чтобы увеличить прибыль.
           </li>
         </ul>
       </section>
@@ -250,41 +246,17 @@
         <p class="Text Text_font_sansCaps Subheading Subheading_3 Position">
           Веб-разработчик
         </p>
+        <p class="Paragraph Text Text_font_serif">
+          <a class="Link" href="https://chitaem.online" target="_blank"
+            >https://chitaem.online</a
+          > — интерактивные онлайн-книги для детей. Вся техническая работа
+          проделана мной. Сайт написан на <b>Next.js</b>.
+        </p>
         <ul class="List Paragraph">
           <li class="Text Text_font_serif">
-            Интерактивные онлайн-книги для детей (<a
-              class="Link"
-              href="https://chitaem.online"
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-              >https://chitaem.online</a
-            >) — проект, созданный моей женой. Вся техническая работа проделана
-            мной.
-          </li>
-          <li class="Text Text_font_serif">Сайт написан на Next.js.</li>
-          <li class="Text Text_font_serif">
-            Интерактивные книги (<a
-              class="Link"
-              href="https://chitaem.online/books/kostyas-adventures"
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-              >https://chitaem.online/books/kostyas-adventures</a
-            >,
-            <a
-              class="Link"
-              href="https://chitaem.online/books/first-fox-on-the-moon"
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-              >https://chitaem.online/books/first-fox-on-the-moon</a
-            >,
-            <a
-              class="Link"
-              href="https://chitaem.online/books/sugar-story"
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-              >https://chitaem.online/books/sugar-story</a
-            >) написаны на ванильных HTML, JavaScript и CSS. Webpack собирает
-            из одного исходника полную и триальную версии.
+            Сами книги написаны на <b>ванильных HTML</b>,
+            <b>JavaScript</b> и <b>CSS</b>. <b>Webpack</b> собирает из одного
+            исходника полную и триальную версии.
           </li>
           <li class="Text Text_font_serif">
             Проект мультиязычный — поддерживаются русский и татарский языки.
@@ -293,11 +265,18 @@
       </section>
     </section>
     <section class="Section Section_short">
+      <h2 class="Text Text_font_caption Heading Heading_2">О себе</h2>
+      <p class="Text Text_font_serif Paragraph">
+        За время работы в IT я был и разработчиком игр, и бэкенд разработчиком,
+        а сейчас я — фронтенд-разработчик и мне это очень нравится.
+        <b>Я люблю React.js</b>, но готов обучиться и чему-то новому.
+      </p>
+    </section>
+    <section class="Section Section_short">
       <h2 class="Text Text_font_caption Heading Heading_2">Образование</h2>
       <p class="Text Text_font_serif Paragraph">
-        Казанский Национальный Исследовательский Технический Университет
-        им. А. Н. Туполева — КАИ (2007 – 2012) — диплом специалиста, Прикладная
-        информатика в экономике.
+        КНИТУ им. А. Н. Туполева — КАИ (2007 – 2012) — диплом специалиста,
+        Прикладная информатика в экономике.
       </p>
     </section>
     <section class="Section Section_short">
@@ -331,12 +310,12 @@
     </section>
     <section class="Section Section_short QrCode-Section">
       <h2 class="Text Text_font_caption Heading Heading_3 QrCode-Heading">
-        Онлайн
+        Это резюме онлайн
       </h2>
       <p
         class="Text Text_font_sansCaps Subheading Subheading_3 QrCode-Description"
       >
-        Ссылка на актуальную версию этого резюме
+        Ссылка на актуальную версию
       </p>
       <p class="Text Text_font_serif Paragraph QrCode-Link">
         <a
